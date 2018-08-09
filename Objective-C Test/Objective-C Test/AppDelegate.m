@@ -19,7 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.context = self.persistentContainer.viewContext;
-    [self createData];
+    //[self createData];
+    //[self basicFetch];
+    //[self fetchWithSort];
+    //[self fetchWithFilter];
+    //[self updatePersons];
+    //[self deletePerson];
     return YES;
 }
 
@@ -41,6 +46,54 @@
     
     [self saveContext];
     
+}
+
+/*
+ - (NSArray *)executeFetchRequest:(NSFetchRequest *)request error:(NSError * _Nullable *)error;
+ */
+- (void)basicFetch {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSArray <Person*>* persons = [self.context executeFetchRequest:request error:nil];
+    [self printResultsFromArray:persons];
+}
+    
+- (void)fetchWithSort {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSSortDescriptor *ageDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
+    request.sortDescriptors = @[ageDescriptor];
+    NSArray <Person *>*results = [self.context executeFetchRequest:request error:nil];
+    [self printResultsFromArray:results];
+        
+}
+
+-  (NSArray <Person *>*)fetchWithFilter {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age > 30"];
+    request.predicate = predicate;
+    NSArray <Person *>* persons = [self.context executeFetchRequest:request error:nil];
+    [self printResultsFromArray:persons];
+    return persons;
+}
+
+- (void)updatePersons {
+    Person *martin = [self fetchWithFilter][0];
+    martin.age = 48;
+    [self saveContext];
+}
+
+- (void)deletePerson {
+    Person *martin = [self fetchWithFilter][0];
+    [self.context deleteObject:martin];
+    [self saveContext];
+    
+}
+    
+
+- (void)printResultsFromArray:(NSArray <Person *>*)persons {
+    for (Person *person in persons) {
+        NSLog(@"%@ %@ is %@ years old, so oldzzzzzzzzz", person.firstName, person.lastName, @(person.age));
+        
+    }
 }
 
 
