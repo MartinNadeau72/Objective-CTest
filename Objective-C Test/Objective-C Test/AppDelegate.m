@@ -9,16 +9,24 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic)NSManagedObjectContext *context;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.context = self.persistentContainer.viewContext;
+    [self createData];
     return YES;
 }
 
+- (void)createData {
+    
+}
+
+
+#pragma mark - Core Data Stack
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
@@ -48,9 +56,8 @@
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;
-    if ([context hasChanges] && ![context save:&error]) {
+    if ([self.context hasChanges] && ![self.context save:&error]) {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
