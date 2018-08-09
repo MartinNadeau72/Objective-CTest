@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Person+CoreDataClass.h"
+#import "Person+CoreDataProperties.h"
 
 @interface AppDelegate ()
 @property (nonatomic)NSManagedObjectContext *context;
@@ -22,6 +24,22 @@
 }
 
 - (void)createData {
+    Person *p1 = [[Person alloc] initWithContext:self.context];
+    p1.firstName = @"Martin";
+    p1.lastName = @"Nadeau";
+    p1.age = 32;
+    
+    Person *p2 = [[Person alloc] initWithContext:self.context];
+    p2.firstName = @"Geneviève";
+    p2.lastName = @"Denis";
+    p2.age = 40;
+    
+    Person *p3 = [[Person alloc] initWithContext:self.context];
+    p3.firstName = @"Claude";
+    p3.lastName = @"Nadeau";
+    p3.age = 49;
+    
+    [self saveContext];
     
 }
 
