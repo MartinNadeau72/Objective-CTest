@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70E141F211FA989008D34F7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E141E211FA989008D34F7 /* MainViewController.m */; };
 		B74D6920211C966D0047FE58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D691F211C966D0047FE58 /* AppDelegate.m */; };
 		B74D6923211C966D0047FE58 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D6922211C966D0047FE58 /* ViewController.m */; };
 		B74D6926211C966D0047FE58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74D6924211C966D0047FE58 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70E141D211FA989008D34F7 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B70E141E211FA989008D34F7 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		B74D691B211C966D0047FE58 /* Objective-C Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objective-C Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74D691E211C966D0047FE58 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B74D691F211C966D0047FE58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 			children = (
 				B74D691E211C966D0047FE58 /* AppDelegate.h */,
 				B74D691F211C966D0047FE58 /* AppDelegate.m */,
+				B70E141D211FA989008D34F7 /* MainViewController.h */,
+				B70E141E211FA989008D34F7 /* MainViewController.m */,
 				B74D6921211C966D0047FE58 /* ViewController.h */,
 				B74D6922211C966D0047FE58 /* ViewController.m */,
 				B74D6924211C966D0047FE58 /* Main.storyboard */,
@@ -147,6 +152,7 @@
 				B74D6929211C966D0047FE58 /* Objective_C_Test.xcdatamodeld in Sources */,
 				B74D6923211C966D0047FE58 /* ViewController.m in Sources */,
 				B74D6931211C966D0047FE58 /* main.m in Sources */,
+				B70E141F211FA989008D34F7 /* MainViewController.m in Sources */,
 				B74D6920211C966D0047FE58 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

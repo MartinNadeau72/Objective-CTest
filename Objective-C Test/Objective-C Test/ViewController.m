@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+//#import "Person+CoreDataClass.h"
+
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *ageTF;
 
 @end
 
@@ -16,14 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)saveBtn:(UIBarButtonItem *)sender {
+    
 }
-
 
 @end
